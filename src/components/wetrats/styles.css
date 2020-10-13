@@ -1,0 +1,49 @@
+.quemsomos {
+    margin: 10rem 0;
+}
+
+.wetrats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 15rem;
+}
+
+.wetrats img {
+    width: 35vw;
+    height: auto;
+}
+
+.wetrats .equipe h5 {
+    color: var(--cor-texto-escuro);
+    font: 500 2.4rem Montserrat;
+    text-align: center;
+}
+
+.wetrats .equipe {
+    color: var(--cor-texto-escuro);
+    font: 300 1.8rem Montserrat;
+    text-align: justify;
+    max-width: 35vw;
+}
+
+.quemsomos .valores h1 {
+    color: var(--cor-texto-escuro);
+    font: 500 5.4rem Montserrat;
+    text-align: center;
+    margin-bottom: 3.2rem;
+}
+
+.quemsomos .valores > h3 {
+    color: var(--cor-texto-escuro);
+    font: 300 2.4rem Montserrat;
+    text-align: center;
+    margin-bottom: 8rem;
+}
+
+.topicos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

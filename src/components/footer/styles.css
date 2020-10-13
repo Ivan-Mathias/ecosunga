@@ -1,0 +1,40 @@
+.footer{
+    background: var(--cor-azul-primario);
+    width: 100vw;
+    height: 30rem;
+}
+
+.footer .links {
+    display: flex;
+    flex-direction: row;
+    padding: 10rem 0 6rem 0;
+    width: fit-content;
+    margin: auto;
+}
+
+.footer .links a {
+    text-decoration: none;
+}
+
+.footer .links a .link{
+    text-decoration: none;
+    color: var(--cor-borda-campos);
+    font: 300 1.8rem Montserrat;
+    margin-left: 8rem;
+}
+
+.footer .links a:first-of-type .link {
+    margin-left: 0;
+}
+
+.social {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.social .logos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 1.2rem;
+}

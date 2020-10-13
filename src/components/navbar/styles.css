@@ -1,0 +1,32 @@
+.navbar{
+    background: var(--cor-azul-primario);
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 32px;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8rem;
+    overflow: none;
+    z-index: 2;
+    box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
+}
+
+.navbar .links {
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar .links a {
+    text-decoration: none;
+}
+
+.navbar .links .link {
+    text-decoration: none;
+    color: var(--cor-borda-campos);
+    font: 500 2.4rem Montserrat;
+    margin-left: 2.4rem;
+}

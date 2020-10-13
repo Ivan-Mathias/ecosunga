@@ -1,0 +1,23 @@
+.comofunciona {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10rem;
+}
+
+.comofunciona .itens {
+    margin-left: 8rem;
+}
+
+.comofunciona .itens .item h3{
+    color: var(--cor-verde-itens);
+    font: 700 2.4rem Montserrat;
+    margin-bottom: 3.2rem;
+}
+
+.comofunciona .itens .item {
+    color: var(--cor-texto-escuro);
+    font: 500 1.8rem Montserrat;
+    text-align: justify;
+    margin-bottom: 5rem;
+}

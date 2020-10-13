@@ -1,0 +1,57 @@
+:root {
+    --cor-fundo-principal: #F2F2F2;
+    --cor-azul-primario: #132C84;
+    --cor-azul-secundario: #1E3FB2;
+    --cor-verde-primario: #02C532;
+    --cor-verde-itens: #048C26;
+    --cor-texto-claro: #9C98A6;
+    --cor-texto-escuro: #020928;
+    --cor-botoes-desabilitados: #DCDCE5;
+    --cor-borda-campos: #F2F2F2;
+    --cor-interior-campos: #FAFAFC;
+    --cor-texto-campos: #C1BCCC;
+
+    --color-title-in-primary: #FFFFFF;
+    --color-text-in-primary: #D4C2FF;
+    --color-text-title: #32264D;
+    --color-text-complement: #9C98A6;
+    --color-text-base: #6A6180;
+    --color-line-in-white: #E6E6F0;
+    --color-input-background: #F8F8FC;
+    --color-button-text: #FFFFFF;
+    --color-box-base: #FFFFFF;
+    --color-box-footer: #FAFAFC;
+  
+    font-size: 60%;
+  }
+
+  *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+
+  body{
+      background: var(--cor-fundo-principal);
+    }
+    
+  #root{
+      display: flex;
+      justify-content: center;
+  }
+
+  body, input, button, textarea{
+      font: 500 1.6rem Poppins;
+      color: var(--cor-texto-campos);
+  }
+
+  .container{
+      width: 90vw;
+      max-width: 700px;
+  }
+
+  @media(min-width: 700px){
+      :root{
+          font-size: 62.5%;
+      }
+  }

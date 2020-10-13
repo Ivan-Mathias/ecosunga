@@ -1,0 +1,23 @@
+.secao {
+    width: 100%;
+    padding: 7rem 5%;
+    background: #E7EAF2;
+}
+
+.secao .indice {
+    width: fit-content;
+    margin: 0 auto;
+
+}
+
+.secao .indice h1 {
+    color: var(--cor-texto-escuro);
+    font: 700 5rem Montserrat;
+    text-align: center;
+}
+
+.secao .indice h3{
+    margin-top: 3.2rem;
+    color: var(--cor-texto-escuro);
+    font: 500 2rem Montserrat;
+}

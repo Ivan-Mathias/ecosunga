@@ -1,0 +1,28 @@
+.topico {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.topico img {
+    max-width: 25vw;
+    height: auto;
+}
+
+.topico h3 {
+    color: var(--cor-texto-escuro);
+    font: 500 2.4rem Montserrat;
+    text-align: center;
+    margin-top: 2.4rem;
+    margin-bottom: 1.2rem;
+}
+
+.topico p{
+    color: var(--cor-texto-escuro);
+    font: 300 1.6rem Montserrat;
+    text-align: justify;
+    max-width: 32rem;
+}
+
