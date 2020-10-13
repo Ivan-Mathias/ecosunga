@@ -1,0 +1,110 @@
+.sobre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sobre .linha1 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.sobre .linha2 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-bottom: 8rem;
+}
+
+.foto1 img, .foto2 img, .foto3 img {
+    max-width: 15vw;
+}
+
+.foto2 {
+    margin-right: 8rem;
+}
+
+.foto3 {
+    margin-left: 8rem;
+}
+
+.linha1 .natacao {
+    background: var(--cor-azul-secundario);
+    color: var(--cor-fundo-principal);
+    border-radius: 50%;
+    width: 38vw;
+    height: 38vw;
+    position: relative;
+    top: 24rem;
+    left: 12rem;
+    z-index: 3;
+    border: 3px solid var(--cor-texto-escuro);
+}
+
+.linha1 .natacao h3 {
+    text-align: center;
+    margin-top: 6rem;
+    font: 700 3.2rem Montserrat;
+}
+
+.linha1 .natacao p {
+    text-align: center;
+    margin-top: 3.2rem;
+    text-align: justify;
+    font: 300 1.8rem Montserrat;
+    padding: 0 15% 5% 15%;
+}
+
+.linha1 .sustentabilidade {
+    background: var(--cor-verde-itens);
+    color: var(--cor-fundo-principal);
+    border-radius: 50%;
+    width: 38vw;
+    height: 38vw;
+    position: relative;
+    top: 24rem;
+    left: -12rem;
+    z-index: 2;
+    border: 3px solid var(--cor-texto-escuro);
+}
+
+.linha1 .sustentabilidade h3 {
+    text-align: center;
+    margin-top: 6rem;
+    font: 700 3.2rem Montserrat;
+}
+
+.linha1 .sustentabilidade p {
+    text-align: center;
+    margin-top: 3.2rem;
+    text-align: justify;
+    font: 300 1.8rem Montserrat;
+    padding: 0 15% 5% 15%;
+}
+
+.linha2 .competicao {
+    background: var(--cor-fundo-principal);
+    color: var(--cor-texto-escuro);
+    border-radius: 50%;
+    width: 38vw;
+    height: 38vw;
+    position: relative;
+    top: 8rem;
+    z-index: 1;
+    border: 3px solid var(--cor-texto-escuro);
+}
+
+.linha2 .competicao h3 {
+    text-align: center;
+    margin-top: 16rem;
+    font: 700 3.2rem Montserrat;
+}
+
+.linha2 .competicao p {
+    text-align: center;
+    margin-top: 3.2rem;
+    text-align: justify;
+    font: 300 1.8rem Montserrat;
+    padding: 0 15% 5% 15%;
+}

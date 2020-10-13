@@ -4,6 +4,7 @@ import Contato from '../../components/contato';
 import Footer from '../../components/footer';
 import Ipe from '../../components/ipe';
 import Navbar from '../../components/navbar';
+import Oquee from '../../components/oquee';
 import Secao from '../../components/secao';
 import Wetrats from '../../components/wetrats';
 import './styles.css';
@@ -13,8 +14,8 @@ function Sobre () {
         <div className="page-sobre">
             <Navbar link={1}/>
             <Banner />
-            <Secao titulo="O que é o Ecoswim?" fundo="#ffffff">
-
+            <Secao titulo="O que é o Ecoswim?" fundo="#E7EAF2">
+                <Oquee />
             </Secao>
             <Secao titulo="Quem somos" fundo="#DCE0EC">
                 <Wetrats />
