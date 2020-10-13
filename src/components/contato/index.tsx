@@ -10,7 +10,7 @@ function Contato () {
         <div className="contatos">
             <div className="contato">
                 <img src={icone_telefone} alt="Telefone"/>
-                <p>(11) 9 4481-7912 - Ivan - Diretor</p>
+                <p>(11) 9 9408-9654 - Ivan - Diretor</p>
             </div>
             <div className="contato">
                 <img src={icone_telefone} alt="Telefone"/>
