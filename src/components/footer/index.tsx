@@ -7,7 +7,7 @@ import logo_instagram from '../../assets/images/logos/instagram-logo.svg';
 
 function Footer () {
     return (
-        <div className="footer">
+        <div className="footersite">
             <div className="links">
                 <Link to="/sobre/">
                     <div className="link">Sobre o ecoswim</div>

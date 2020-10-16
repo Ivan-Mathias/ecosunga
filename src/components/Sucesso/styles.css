@@ -1,0 +1,114 @@
+#page-sucesso{
+    width: 100vw;
+    height: 100vh;
+    background: var(--cor-azul-primario);
+    color: var(--cor-texto-claro);
+}
+
+#page-sucesso-content {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+    margin: 6.8rem auto 0 auto;
+}
+
+.fundo {
+    height: 75vh;
+    flex: 1;
+    text-align: center;
+    background:url('../../assets/images/background.svg') no-repeat;
+    background-size: contain;
+    background-position: top;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mensagem {
+    margin-top: 12rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mensagem img {
+    height: 8rem;
+}
+
+.mensagem strong {
+    font: 700 3.2rem Archivo;
+    line-height: 3.7rem;
+    color: var(--cor-branco);
+    margin-top: 2.4rem;
+    max-width: 25rem;
+}
+
+.mensagem p {
+    font: 400 1.6rem Poppins;
+    line-height: 2.6rem;
+    color: var(--cor-texto-claro);
+    max-width: 39rem;
+}
+
+.fundo a{
+    width: 90%;
+    height: 5.6rem;
+    background: var(--cor-verde-primario);
+    color: var(--cor-branco);
+    border: 0;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    font: 700 1.6rem Archivo;
+    line-height: 5.6rem;
+    transition: background-color 0.2s;
+    margin: 0 auto;
+    text-decoration: none;
+    text-align: center;
+}
+
+.fundo a:hover{
+    background: var(--cor-verde-itens);
+}
+
+
+@media(min-width: 1100px) {
+    #page-sucesso {
+        display: unset;
+    }
+
+    #page-sucesso-content{
+        display: flex;
+        align-content: center;
+        max-width: unset;
+    }
+    
+    .fundo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 75vh;
+        flex: 1;
+        text-align: center;
+        background:url('../../assets/images/success-background.svg') no-repeat;
+        background-position: center;
+        justify-content: space-around;
+    }
+
+    .mensagem {
+        margin-top: 6rem;
+    }
+        
+    .mensagem img {
+        height: unset;
+    }
+
+    .mensagem strong {
+        max-width: 50rem;
+    }
+    
+    .fundo a {
+        width: fit-content;
+        margin-top: -16rem;
+        padding: 0 2rem;
+    }
+}

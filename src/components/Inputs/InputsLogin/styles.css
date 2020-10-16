@@ -1,0 +1,55 @@
+.entrelinhas {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 2.4rem 0;
+}
+
+.lembrarCheckbox {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 8px;
+    color: var(--cor-borda-campos);
+}
+
+.entrelinhas p,
+.entrelinhas a {
+    font: 1.2rem Poppins;
+    color: var(--cor-texto-claro);
+}
+
+.entrelinhas a{
+    margin-left: auto;
+    text-decoration: none;
+}
+
+.entrelinhas label p {
+    position: absolute;
+    margin-left: 3.4rem;
+    margin-top: 0.2rem;
+}
+
+.lembrarCheckbox {
+    display:none;
+}
+
+.lembrarCheckbox + label,
+.lembrarCheckbox:checked + label {
+    height: 2.4rem;
+    width: 2.4rem;
+    border-radius: 0.8rem;
+    margin: 0.2rem;
+    margin-right: 1.2rem;
+}
+
+.lembrarCheckbox + label{
+    background: var(--cor-branco);
+    border: 1px solid var(--cor-borda-campos);
+}
+
+.lembrarCheckbox:checked + label{
+    background: url('../../../assets/images/icones/checkbox.svg') no-repeat var(--cor-verde-primario);
+    background-size: 1rem;
+    background-position: center;
+    border: 1px solid var(--cor-verde-primario);
+}

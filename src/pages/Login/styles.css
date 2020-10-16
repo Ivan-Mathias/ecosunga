@@ -1,0 +1,20 @@
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1.2rem;
+    width: 100%;
+    height: fit-content;
+    align-items: baseline;
+}
+
+.footer:first-child {
+    color: var(--cor-texto-claro);
+}
+
+.loginFooter a {
+    color: var(--cor-azul-primario);
+    font-weight: 600;
+    font-size: 1.8rem;
+    margin-right: 1rem;
+}

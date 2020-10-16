@@ -1,10 +1,10 @@
-.footer{
+.footersite{
     background: var(--cor-azul-primario);
     width: 100vw;
     height: 30rem;
 }
 
-.footer .links {
+.footersite .links {
     display: flex;
     flex-direction: row;
     padding: 10rem 0 6rem 0;
@@ -12,18 +12,18 @@
     margin: auto;
 }
 
-.footer .links a {
+.footersite .links a {
     text-decoration: none;
 }
 
-.footer .links a .link{
+.footersite .links a .link{
     text-decoration: none;
     color: var(--cor-borda-campos);
     font: 300 1.8rem Montserrat;
     margin-left: 8rem;
 }
 
-.footer .links a:first-of-type .link {
+.footersite .links a:first-of-type .link {
     margin-left: 0;
 }
 

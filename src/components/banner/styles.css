@@ -8,3 +8,31 @@
     width: 100%;
     height: auto;
 }
+
+.banner .informacoes {
+    position: absolute;
+    top: 42vh;
+    right: 4vw;
+    color: var(--cor-texto-escuro);
+    font-family: 'Roboto';
+    font-size: 3.6rem;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+}
+
+.banner .informacoes h2 {
+    font-weight: 700;
+}
+
+.banner .informacoes .botaoinscricoes {
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 1.6rem;
+    color: var(--cor-interior-campos);
+    background: #132C84;
+    align-self: center;
+    margin-top: 1.2rem;
+    border-radius: 8px;
+    text-transform: none;
+}
