@@ -1,0 +1,73 @@
+.linha {
+    width: 100%;
+    height: 7.6rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid var(--cor-borda-campos);
+    background: var(--cor-interior-campos);
+    border-radius: 8px;
+    margin-bottom: 4px;
+    transition: 0.8s;
+}
+
+.linha3 {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 1rem 32rem 6.4rem;
+    grid-template-areas: "p1 p2 p3";
+}
+
+.linha3 .p3 {
+    width: 6.4rem;
+    position: relative;
+    right: 5.4rem;
+    text-align: end;
+}
+
+.linha-tudo {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 1rem 32rem 6.4rem 5rem 4rem;
+    grid-template-areas: "tabelatudoposicao tabelatudoequipe tabelatudometragem tabelatudomembros tabelatudohorario";
+}
+
+.linha-tudo p {
+    text-align: center;
+}
+
+.linha-tudo .tabelatudohorario {
+    width: 4rem;
+    position: relative;
+    right: 6rem;
+}
+
+.linha-tudo .tabelatudoequipe {
+    text-align: start;
+}
+
+.linha:hover {
+    background: var(--cor-interior-campos-hover);
+    border: 2px solid var(--cor-borda-campos-hover);
+}
+
+.linha p:first-child {
+    font: 500 3.2rem Montserrat;
+    color: var(--cor-texto-escuro);
+    margin-left: 6rem;
+}
+
+.linha p {
+    font: 500 2.4rem Archivo;
+    color: var(--cor-texto-escuro);
+}
+
+.linha p:nth-child(2) {
+    width: 32rem;
+    text-align: start;
+}
+
+.linha p:last-child {
+    margin-right: 6rem;
+}

@@ -1,5 +1,6 @@
 :root {
     --cor-fundo-principal: #F2F2F2;
+    --cor-branco: #FFFFFF;
     --cor-azul-primario: #132C84;
     --cor-azul-secundario: #1E3FB2;
     --cor-verde-primario: #02C532;
@@ -10,6 +11,8 @@
     --cor-borda-campos: #F2F2F2;
     --cor-interior-campos: #FAFAFC;
     --cor-texto-campos: #C1BCCC;
+    --cor-borda-campos-hover: #A5A5A5;
+    --cor-interior-campos-hover: #f6f6f6;
 
     --color-title-in-primary: #FFFFFF;
     --color-text-in-primary: #D4C2FF;

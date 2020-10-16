@@ -1,0 +1,49 @@
+.cabecalho-3, .cabecalho-5 {
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 1.6rem;
+}
+
+.cabecalho-3 {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 2rem 32rem 6rem;
+    grid-template-areas: "p1 p2 p3";
+}
+
+.cabecalho-5 {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 2rem 32rem 6rem 0rem 11rem;
+    grid-template-areas: "p1 p2 p3 p4 p5";
+}
+
+.cabecalho-5 .p1 {
+    margin-left: 2.4rem;
+}
+
+.cabecalho-3 p, .cabecalho-5 p {
+    font: 300 1.6rem Archivo;
+    color: var(--cor-texto-claro);
+}
+
+.cabecalho-3 .p1 {
+    margin-left: 3rem;
+    margin-right: -6rem;
+}
+.cabecalho-3 .p3 {
+    position: relative;
+    right: 5.6rem;
+}
+
+.horarioClicado {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.MuiBox-root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
