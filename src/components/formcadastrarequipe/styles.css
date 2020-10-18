@@ -1,0 +1,213 @@
+.formcadastroequipe {
+    width: 100vw;
+    height: 100%;
+}
+
+.formcadastroequipe main {
+    background: var(--cor-branco);
+    width: 100%;
+    max-width: 74rem;
+    border-radius: 0.8rem;
+    margin: -1.2rem auto 3.2rem;
+    padding-top: 1.2rem;
+    overflow: hidden;
+}
+
+.formcadastroequipe main form {
+    margin-bottom: 0;
+}
+
+.formcadastroequipe main fieldset {
+    border: 0;
+    padding: 0 6.4rem;
+}
+
+.formcadastroequipe fieldset legend {
+    font: 700 2.4rem Archivo;
+    color: var(--cor-texto-escuro);
+    margin-bottom: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid var(--cor-borda-campos);
+}
+
+.formcadastroequipe fieldset .linha1dadosequipe {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.formcadastroequipe fieldset .linha1dadosequipe .avatar img {
+    width: 16rem;
+    height: 16rem;
+    border-radius: 50%;
+}
+
+.formcadastroequipe fieldset .linha1dadosequipe .avatar  {
+    position: relative;
+}
+
+.formcadastroequipe fieldset .linha1dadosequipe .avatar label {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.formcadastroequipe fieldset .linha1dadosequipe .avatar label img {
+    width: 4.4rem;
+    height: 4.4rem;
+    border-radius: 50%;
+}
+
+.formcadastroequipe fieldset .linha1dadosequipe #selecionar-foto {
+    display: none;
+}
+
+.formcadastroequipe fieldset .linha1dadosequipe .linha1dadossemfoto {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.formcadastroequipe fieldset .linha1dadosequipe .nomeequipe {
+    margin: 0 2.4rem;
+}
+
+.formcadastroequipe fieldset .senhasequipe {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.formcadastroequipe fieldset .senhasequipe .input-block {
+    width: 100%;
+}
+
+.formcadastroequipe fieldset .entrelinhassenhaequipe{
+    font: 400 1rem Poppins;
+    color: var(--cor-texto-claro);
+    margin-top: 2.4rem;
+}
+
+.formcadastroequipe main footer{
+    padding: 4rem;
+    background: var(--cor-borda-campos);
+    border-top: 1px solid var(--cor-borda-campos);
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.formcadastroequipe main footer p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    color: var(--cor-texto-claro);
+}
+
+.formcadastroequipe main footer p img {
+    margin-right: 2rem;
+}
+
+.formcadastroequipe main footer button {
+    width: fit-content;
+    padding: 0 4rem;
+    height: 5.6rem;
+    background: var(--cor-verde-primario);
+    color: var(--cor-branco);
+    border: 0;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    font: 700 1.6rem Archivo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.formcadastroequipe main footer button:hover {
+    background: var(--cor-verde-itens);
+}
+
+.formcadastroequipe main footer .avisos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.formcadastroequipe main footer .avisos p:first-child {
+    color: var(--cor-azul-primario);
+}
+
+@media(max-width: 700px) {
+    .formcadastroequipe main {
+        margin: 0;
+    }
+    
+    .formcadastroequipe main fieldset {
+        padding: 0 3.2rem;
+    }
+
+    .formcadastroequipe fieldset .linha1dadosequipe {
+        position: relative;
+        margin-bottom: 15rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .formcadastroequipe fieldset .linha1dadosequipe img{
+        height: 12rem;
+        width: auto;
+        margin: 0 2.4rem;
+    }
+
+    .formcadastroequipe fieldset .linha1dadosequipe .MuiFormControl-root{
+        margin-bottom: 2.4rem;
+    }
+    
+    .formcadastroequipe fieldset .linha1dadosequipe .nomeequipe {
+        position: absolute;
+        margin-top: 28rem;
+        margin-left: 0;
+        width: calc(100vw - 6.4rem);
+    }
+
+    .formcadastroequipe fieldset .senhasequipe {
+        flex-direction: column;
+    }
+
+    .formcadastroequipe fieldset .senhasequipe .input-block {
+        width: 100%;
+    }
+
+    .formcadastroequipe fieldset .senhasequipe .input-block + .input-block{
+        margin-top: 2.4rem;
+    }
+
+    .formcadastroequipe main footer button {
+        padding: 0 1.2rem;
+        height: 5.6rem;
+    }
+
+    .formcadastroequipe main footer p {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+    }
+
+    .formcadastroequipe main footer p img {
+        margin-right: 1.2rem;
+    }
+
+}

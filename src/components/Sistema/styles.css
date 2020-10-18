@@ -148,7 +148,7 @@ form {
     margin: 4rem 0;
 }
 
-form button{
+form > button{
     width: 100%;
     height: 5.6rem;
     background: var(--cor-verde-primario);

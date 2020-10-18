@@ -60,7 +60,7 @@ function Login() {
         }else if (lembrarme && usuario) {
             criarToken(usuario);
         }
-    }, [usuario]);
+    }, [usuario, lembrarme]);
 
     async function criarToken (usuario: usuario) {
         const {id, nome, email, equipe, chefe, admin} = usuario;

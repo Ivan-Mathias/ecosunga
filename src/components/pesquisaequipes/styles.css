@@ -1,0 +1,146 @@
+.pesquisaequipes main {
+    width: 100%;
+    max-width: 74rem;
+    border-radius: 0.8rem;
+    margin: -1.2rem auto 3.2rem;
+    padding-top: 1.2rem;
+}
+
+.pesquisaequipes main .barrapesquisa {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: -6rem 5rem 0 5rem;
+}
+
+.pesquisaequipes main .barrapesquisa .input-block {
+    width: 85%;
+}
+
+.pesquisaequipes main .barrapesquisa .input-block label {
+    color: var(--cor-texto-claro);
+}
+
+.pesquisaequipes main .barrapesquisa button {
+    background: var(--cor-verde-primario);
+    padding: 1.6rem;
+    width: 5.6rem;
+    height: 5.6rem;
+    border-radius: 8px;
+    border: none;
+}
+
+.pesquisaequipes main .acordeons {
+    margin-top: 4rem;
+}
+
+.pesquisaequipes main .acordeons .MuiPaper-root::before {
+    background: none;
+}
+
+.pesquisaequipes main .acordeons .MuiPaper-root {
+    margin-bottom: 0.8rem;
+    box-shadow: none;
+    border: 1px solid var(--cor-borda-campos);
+    border-radius: 8px;
+    background: var(--cor-branco);
+}
+
+.pesquisaequipes main .acordeons .MuiAccordionSummary-root {
+    padding: 0 3.2rem;
+    border-radius: 8px;
+    height: 10rem;
+}
+
+.pesquisaequipes main .acordeons .sumario {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.pesquisaequipes main .acordeons .sumario .bloco1 img {
+    height: 8rem;
+    width: 8rem;
+    border-radius: 50%;
+    margin-right: 2.4rem;
+}
+
+.pesquisaequipes main .acordeons .sumario .bloco1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.pesquisaequipes main .acordeons .sumario .bloco1 .dados1 strong{
+    font: 700 2.4rem Archivo;
+    color: var(--cor-texto-escuro);
+}
+
+.pesquisaequipes main .acordeons .sumario .bloco1 .dados1 p{
+    font: 400 1.6rem Poppins;
+    color: var(--cor-texto-claro);
+}
+
+.pesquisaequipes main .acordeons .sumario .dados2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.pesquisaequipes main .acordeons .sumario .dados2 p {
+    font: 400 2.4rem Poppins;
+    color: var(--cor-texto-claro);
+}
+
+.pesquisaequipes main .acordeons .sumario .dados2 p + p {
+    margin-left: 6.4rem;
+}
+
+.pesquisaequipes main .MuiAccordionDetails-root {
+    padding: 0;
+}
+
+.pesquisaequipes main .detalhes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 10.4rem;
+    width: 100%;
+}
+
+.pesquisaequipes main .detalhes input {
+    height: 5.6rem;
+    width: 40rem;
+    background: var(--cor-interior-campos);
+    border: 1px solid var(--cor-borda-campos);
+    border-radius: 8px;
+    padding: 1.5rem 1.6rem;
+    color: var(--cor-texto-campos);
+    font: 400 1.6rem Poppins;
+}
+
+.pesquisaequipes main .detalhes button {
+    height: 5.6rem;
+    padding: 1.5rem 5.8rem;
+    background: var(--cor-verde-primario);
+    border: none;
+    border-radius: 8px;
+    color: var(--cor-branco);
+    font: 400 1.6rem Archivo;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.pesquisaequipes main .detalhes button:hover {
+    background: var(--cor-verde-itens);
+}
+
+@media(max-width: 700px) {
+    .pesquisaequipes main {
+        width: 90%;
+    }
+}

@@ -1,0 +1,85 @@
+.page-definirequipe{
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.criarequipetitulo {
+    font: 700 3.6rem Archivo;
+    max-width: 23.25rem;
+    color: var(--cor-branco);
+}
+
+.duvidainscricao {
+    display: flex;
+    flex-direction: row;
+}
+
+.duvidainscricao p {
+    font: 400 1rem Poppins;
+    max-width: 9rem;
+    color: var(--cor-branco);
+    text-align: end;
+    margin-right: .8rem;
+}
+
+.criarequipesubtitulo {
+    font: 400 1.6rem Poppins;
+    max-width: 28rem;
+    color: var(--cor-branco);
+}
+
+.entrarequipetitulo {
+    font: 700 3.6rem Archivo;
+    max-width: 31rem;
+    color: var(--cor-branco);
+}
+
+.numeroequipesinscritas {
+    font: 400 1.2rem Poppins;
+    max-width: 14rem;
+    color: var(--cor-branco);
+    text-align: right;
+}
+
+@media(max-width: 700px) {
+    .criarequipetitulo {
+        font-size: 3rem;
+    }
+
+    .duvidainscricao {
+        position: absolute;
+        top: 9.2rem;
+        right: 4vw;
+        max-width: 11rem;
+    }
+
+    .duvidainscricao img {
+        width: 2.4rem;
+        height: auto;
+    }
+
+    .duvidainscricao p {
+        font-size: 0.8rem;
+    }
+
+    .criarequipesubtitulo {
+        font-size: 1.2rem;
+        max-width: 20rem;
+        margin-top: 1.2rem;
+    }
+
+    .entrarequipetitulo {
+        font-size: 3rem;
+        max-width: 28rem;
+        margin-bottom: 2rem;
+    }
+
+    .numeroequipesinscritas {
+        font: 400 1.2rem Poppins;
+        max-width: unset;
+        color: var(--cor-branco);
+        text-align: left;
+        position: absolute;
+        top: 8rem;
+    }
+}

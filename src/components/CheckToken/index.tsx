@@ -10,8 +10,6 @@ interface checkToken {
 
 const CheckToken: React.FC<checkToken> = ({setEmail, setTokenVerificado, setErro}) => {
     let { token } = useParams();
-    console.log(token);
-    
     
     function parseJwt (token: string) {
         var base64Url = token.split('.')[1];

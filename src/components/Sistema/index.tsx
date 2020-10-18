@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import './styles.css';
 
 import logoImg from '../../assets/images/logos/logo.svg';
-import backgroundImg from '../../assets/images/fundosistema.svg';
 
 interface dados {
     setaVoltar: boolean;

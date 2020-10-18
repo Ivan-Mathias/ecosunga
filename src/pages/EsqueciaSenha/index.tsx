@@ -49,7 +49,7 @@ function EsqueciaSenha() {
 
     async function handleRedefinirSenha() {
         if (email) {
-            if (tokenCorreto && senha == confirmaSenha) {
+            if (tokenCorreto && senha === confirmaSenha) {
                 await api.post('esqueciasenha/', {
                     email,
                     senha,
@@ -74,7 +74,7 @@ function EsqueciaSenha() {
     }
 
     useEffect(() => {
-        if (senha != confirmaSenha && confirmaSenha) {
+        if (senha !== confirmaSenha && confirmaSenha) {
             setErro('As senhas inseridas não são iguais.');
         }else {
             setErro('');

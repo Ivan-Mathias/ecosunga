@@ -4,11 +4,12 @@ import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import OpenIcon from '@material-ui/icons/OpenWith';
-import { Box, Button, FormControl, MenuItem, Select, ThemeProvider } from '@material-ui/core';
+import { Button, FormControl, MenuItem, Select, ThemeProvider } from '@material-ui/core';
 import LinhaTabela from '../linhatabela';
 import api from '../../services/api';
 import './styles.css';
 import { Tema } from '../../assets/styles/tema';
+import TabPanel from '../tabpanel';
 
 const useStyles = makeStyles({
   root: {
@@ -70,32 +71,6 @@ const useStyles = makeStyles({
     marginTop: '4.8rem',
   }
 });
-
-interface TabPanelProps {
-    children?: React.ReactNode;
-    index: any;
-    value: any;
-  }
-  
-function TabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`tabpanel-${index}`}
-      aria-labelledby={`tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box p={3}>
-          {children}
-        </Box>
-      )}
-    </div>
-  );
-}
 
 interface SelectHorario {
   horarioSelecionado: number;
@@ -241,7 +216,7 @@ export default function CenteredTabs(props: CenteredTabs) {
 
   return (
     <ThemeProvider theme={Tema}>
-        <Paper className={classes.root}>
+      <Paper className={classes.root}>
         <Tabs
           value={value}
           className={classes.tabs}
@@ -257,7 +232,7 @@ export default function CenteredTabs(props: CenteredTabs) {
           <Tab className={classes.tabEquipe} label="Equipe" />
           <Tab className={classes.tabTudo}icon={<OpenIcon className={classes.iconeTudo}/>} />
         </Tabs>
-        <TabPanel value={value} index={0}>
+        <TabPanel value={value} index={0} padding={true}>
           <div className="cabecalho-3">
             <p className="p1">Classificação</p>
             <p className="p2">Equipe</p>
@@ -268,7 +243,7 @@ export default function CenteredTabs(props: CenteredTabs) {
           })}
           {!ilimitado && <Button className={classes.botaoMostrarMais} variant="contained" color="primary" size="large" onClick={() => {setIlimitado(true)}}>Ver Tudo</Button>}
         </TabPanel>
-        <TabPanel value={value} index={1}>
+        <TabPanel value={value} index={1} padding={true}>
           <div className="cabecalho-3">
             <p className="p1">Classificação</p>
             <p className="p2">Equipe</p>
@@ -278,7 +253,7 @@ export default function CenteredTabs(props: CenteredTabs) {
             return <LinhaTabela key={equipe.classificacao} tipo="horario" posicao={equipe.classificacao} equipe={equipe.nomeEquipe} metragem={equipe.metragem} />
           })}
         </TabPanel>
-        <TabPanel value={value} index={2}>
+        <TabPanel value={value} index={2} padding={true}>
           <div className="cabecalho-3">
               <p className="p1">Classificação</p>
               <p className="p2">Equipe</p>
@@ -289,7 +264,7 @@ export default function CenteredTabs(props: CenteredTabs) {
           })}
           {!ilimitado && <Button className={classes.botaoMostrarMais} variant="contained" color="primary" size="large" onClick={() => {setIlimitado(true)}}>Ver Tudo</Button>}
         </TabPanel>
-        <TabPanel value={value} index={3}>
+        <TabPanel value={value} index={3} padding={true}>
             <div className="cabecalho-5">
               <p className="p1">Classificação</p>
               <p className="p2">Equipe</p>

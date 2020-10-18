@@ -1,0 +1,77 @@
+.page-headersistema {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cor-azul-secundario);
+    width: 100%;
+}
+
+.page-headersistema .fotoheader {
+    position: absolute;
+    right: 3.2rem;
+    height: auto;
+    width: 10rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-headersistema .fotoheader img {
+    max-height: 8rem;
+    margin-top: 2.4rem;
+    width: 100%;
+    height: auto;
+}
+
+.page-headersistema .header-content{
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    margin: 3.2rem auto;
+    align-self: center;
+}
+
+.page-headersistema .header-content .linha1,
+.page-headersistema .header-content .linha2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.page-headersistema .header-content .linha2 {
+    margin-top: 1.2rem;
+}
+
+@media (min-width: 700px){
+    .page-headersistema{
+        height: 28rem;
+    }
+
+    .page-headersistema .fotoheader {
+        width: auto;
+        height: 28rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin: auto 3.2rem;
+        right: unset;
+    }
+
+    .page-headersistema .fotoheader img {
+        max-height: none;
+        height: 16rem;
+        width: auto;
+        margin-top: unset;
+    }
+
+    .page-headersistema .header-content{
+        flex: 1;
+        max-width: 740px;
+        width: 50vw;
+        margin: 6.4rem auto 3.2rem auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+}
