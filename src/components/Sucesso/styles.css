@@ -47,7 +47,6 @@
     font: 400 1.6rem Poppins;
     line-height: 2.6rem;
     color: var(--cor-texto-claro);
-    max-width: 39rem;
 }
 
 .fundo a{

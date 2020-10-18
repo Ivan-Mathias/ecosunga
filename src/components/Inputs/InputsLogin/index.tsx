@@ -35,7 +35,7 @@ const InputsLogin: React.FC<camposLogin> = (props) => {
             </div>
             <div className="entrelinhas">
                 <input type="checkbox" className="lembrarCheckbox" id="checkboxLembrar"
-                    onChange={(e) => {props.setLembrarme(e.target.checked)}}/>
+                    onChange={(e) => {props.setLembrarme(e.target.checked);}}/>
                 <label htmlFor="checkboxLembrar">
                     <p>Lembrar-me</p>
                 </label>

@@ -91,12 +91,13 @@
 }
 
 .pesquisaequipes main .acordeons .sumario .dados2 p {
-    font: 400 2.4rem Poppins;
+    font: 400 2rem Poppins;
     color: var(--cor-texto-claro);
 }
 
 .pesquisaequipes main .acordeons .sumario .dados2 p + p {
     margin-left: 6.4rem;
+    margin-right: 1.2rem;
 }
 
 .pesquisaequipes main .MuiAccordionDetails-root {
@@ -119,7 +120,7 @@
     border: 1px solid var(--cor-borda-campos);
     border-radius: 8px;
     padding: 1.5rem 1.6rem;
-    color: var(--cor-texto-campos);
+    color: var(--cor-texto-escuro);
     font: 400 1.6rem Poppins;
 }
 
@@ -142,5 +143,64 @@
 @media(max-width: 700px) {
     .pesquisaequipes main {
         width: 90%;
+    }
+
+    .pesquisaequipes main .barrapesquisa {
+        margin: 1.2rem 0;
+    }
+
+    .pesquisaequipes main .barrapesquisa .input-block {
+        width: 80%;
+    }
+
+    .pesquisaequipes main .barrapesquisa .input-block label{
+        color: var(--cor-texto-escuro);
+    }
+
+    .pesquisaequipes main .acordeons {
+        margin-top: 2.4rem;
+    }
+
+    .pesquisaequipes main .acordeons .MuiAccordionSummary-root {
+        padding: 0 1.2rem;
+    }
+
+    .pesquisaequipes main .acordeons .sumario {
+        position: relative;
+    }
+
+    .pesquisaequipes main .acordeons .sumario .bloco1 {
+        width: 100%;
+    }
+
+    .pesquisaequipes main .acordeons .sumario .bloco1 img {
+        height: 6rem;
+        width: 6rem;
+        margin-right: 1.2rem;
+    }
+
+    .pesquisaequipes main .acordeons .sumario .bloco1 .dados1 strong{
+        font: 700 2rem Archivo;
+    }
+    
+    .pesquisaequipes main .acordeons .sumario .dados2 {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: flex-end;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .pesquisaequipes main .acordeons .sumario .dados2 p{
+        width: unset;
+        right: 0;
+        bottom: 0;
+        font: 400 1.2rem Poppins;
+    }
+    
+    .pesquisaequipes main .acordeons .sumario .dados2 p + p {
+        margin-left: 2.4rem;
     }
 }

@@ -59,6 +59,10 @@ function Formcadastrarequipe (props: Formcadastrarequipe) {
         if (nomeEquipe !== '' && tipoDaEquipe !== '' && senhaEquipe !== ''){
             const dados = new FormData();
 
+            const dadosSessionArquivo = JSON.parse(sessionStorage.getItem('loginSessionData') as string);
+            const idUsuario = dadosSessionArquivo.id;
+
+            dados.append('id', idUsuario);
             dados.append('nomeequipe', nomeEquipe);
             dados.append('tipo', tipoDaEquipe);
             dados.append('senhaequipe', senhaEquipe);
@@ -75,6 +79,9 @@ function Formcadastrarequipe (props: Formcadastrarequipe) {
                         textoBotao: "Entrar",
                         link: "/paginaequipe/",
                     });
+                    const dadosSessionAtualizado = {...dadosSessionArquivo, equipe: nomeEquipe, chefe: true};
+                    sessionStorage.setItem('loginSessionData', JSON.stringify(dadosSessionAtualizado));
+                    props.setEquipeDefinida(true);
                     props.setEquipeDefinida(true);
                 });
             } catch (error) {

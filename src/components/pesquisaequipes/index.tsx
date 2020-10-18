@@ -55,20 +55,26 @@ function Pesquisaequipes (props: Pesquisaequipe) {
         setNomeDaEquipeEscolhida('');
     };
 
-    async function handleEntrarEquipe (id: number) {
+    async function handleEntrarEquipe (idEquipe: number, nomeEquipe: string) {
+        const dadosSessionArquivo = JSON.parse(sessionStorage.getItem('loginSessionData') as string);
+        const idusuario = dadosSessionArquivo.id;
+        console.log(dadosSessionArquivo);
+        
         await api.get('sistemaequipe/', {
             params: {
-                id: 11,
-                idequipe: id,
+                id: idusuario,
+                idequipe: idEquipe,
                 senhaequipe: senhaDaEquipe,
             }
         }).then(() => {
             props.setSucesso({
                 titulo: "Equipe confirmada!",
-                subtitulo: "Agora você faz parte da equipe"+  +". Acesse a pagina de usuário para finalizar a inscrição.",
+                subtitulo: "Agora você faz parte da equipe "+ nomeEquipe +". Acesse a pagina de usuário para finalizar a inscrição.",
                 textoBotao: "Entrar",
                 link: "/paginaequipe/",
             });
+            const dadosSessionAtualizado = {...dadosSessionArquivo, equipe: idEquipe};
+            sessionStorage.setItem('loginSessionData', JSON.stringify(dadosSessionAtualizado));
             props.setEquipeDefinida(true);
         }).catch((error) => {
             console.log(error);                
@@ -100,14 +106,14 @@ function Pesquisaequipes (props: Pesquisaequipe) {
                                         </div>
                                         <div className="dados2">
                                             <p>{equipe.membros} pessoas</p>
-                                            <p>{equipe.horario}</p>
+                                            <p>{equipe.horario}17h</p>
                                         </div>
                                     </div>
                                 </AccordionSummary>
                                 <AccordionDetails>
                                     <div className="detalhes">
                                         <input type="text" value={senhaDaEquipe} onChange={(e) => {setSenhaDaEquipe(e.target.value)}} placeholder="Digite a senha da equipe"/>
-                                        <button onClick={() => {handleEntrarEquipe(equipe.id); setNomeDaEquipeEscolhida(equipe.nome);}} >Entrar na equipe</button>
+                                        <button onClick={() => {handleEntrarEquipe(equipe.id, equipe.nome); setNomeDaEquipeEscolhida(equipe.nome);}} >Entrar na equipe</button>
                                     </div>
                                 </AccordionDetails>
                             </Accordion>

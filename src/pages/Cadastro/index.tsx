@@ -4,8 +4,11 @@ import Sistema from '../../components/Sistema';
 import InputsCadastro from '../../components/Inputs/InputsCadastro';
 import Sucesso from '../../components/Sucesso';
 import api from '../../services/api';
+import { DadosSession } from '../../routes';
+import { usuario } from '../Login';
 
-function Cadastro() {
+function Cadastro(props: DadosSession) {
+    const {setDadosSession} = props;
     const [cadastroConcluido, setCadastroConcluido] = useState(false);
 
     const [erro, setErro] = useState('');
@@ -21,15 +24,12 @@ function Cadastro() {
                 nome,
                 email,
                 senha,
-            }).then(() => {
+            }).then((response) => {
+                const usuario: usuario = {id: response.data.id, nome: nome, email: email, equipe: null, chefe: false, admin: false};
+                sessionStorage.setItem('loginSessionData', JSON.stringify(usuario));
+                setDadosSession(usuario);
                 setErro('');
                 setCadastroConcluido(true);
-            }).catch(function (error) {
-                if (error.response) {
-                    if (error.response.status === 409) {
-                        setErro(error.response.data.error);
-                    }
-                }
             });
         }        
     }
@@ -40,7 +40,7 @@ function Cadastro() {
         }else if(senha === repetirSenha) {
             setErro('');
         }
-    }, [senha, repetirSenha])
+    }, [senha, repetirSenha]);
 
     function getPagina() {
         return (cadastroConcluido
