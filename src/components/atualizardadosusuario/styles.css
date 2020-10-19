@@ -1,0 +1,131 @@
+.atualizardadosusuario {
+    width: 90%;
+    max-width: 740px;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    align-items: center;
+}
+
+.atualizardadosusuario .opcoes {
+    width: 100%;
+    padding: 6.4rem;
+    padding-top: 2.4rem;
+    background: var(--cor-branco);
+    border-radius: 8px;
+    margin-top: 3.2rem;
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;    
+}
+
+.atualizardadosusuario form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.atualizardadosusuario .opcoes hr {
+    width: 100%;
+    color: var(--cor-texto-claro);
+}
+
+.atualizardadosusuario form legend {
+    font: 600 2.4rem Archivo;
+    color: var(--cor-texto-escuro);
+    margin-bottom: 1.6rem;
+}
+
+.atualizardadosusuario form .input-block {
+    margin-top: 2.4rem;
+}
+
+.atualizardadosusuario form > .input-block {
+    width: 100%;
+}
+
+.atualizardadosusuario form > .input-block ::placeholder {
+    color: var(--cor-texto-escuro);
+}
+
+.atualizardadosusuario form .campoemail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 2.4rem;
+}
+
+.atualizardadosusuario form .campoemail label {
+    font: 400 1.4rem Poppins;
+    color: var(--cor-texto-claro);
+}
+
+.atualizardadosusuario form .campoemail span {
+    height: 5.6rem;
+    font: 400 1.6rem Poppins;
+    color: var(--cor-texto-escuro);
+    padding: 1.6rem 1.6rem;
+    margin-top: 0.8rem;
+}
+
+.atualizardadosusuario form .senhas {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0.8rem;
+    margin-top: 2.4rem;
+    width: 100%;
+}
+
+.atualizardadosusuario form .senhas p {
+    font: 400 1.4rem Poppins;
+    color: var(--cor-texto-claro);
+}
+
+.atualizardadosusuario form .senhas .inputsenhas {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 3.2rem;
+    width: 100%;
+}
+
+.atualizardadosusuario form .senhas .textInput {
+    width: 48%;
+}
+
+.atualizardadosusuario form .senhas .textInput input {
+    border-radius: 8px;
+    background: var(--cor-interior-campos);
+}
+
+.atualizardadosusuario .opcoes button {
+    width: fit-content;
+    align-self: center;
+    padding: 0 4rem;
+}
+
+.atualizardadosusuario .opcoes .botaosairequipe {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.atualizardadosusuario .opcoes .botaosairequipe button {
+    height: 5.6rem;
+    border: 0;
+    border-radius: 8px;
+    font: 700 1.6rem Archivo;
+    color: var(--cor-texto-claro);
+    background: var(--cor-botoes-desabilitados);
+    margin-top: 3.2rem;
+}
+
+@media(max-width: 700px) {
+    .atualizardadosusuario form .senhas .textInput ::placeholder{
+        font-size: 1.2rem;
+    }
+
+}

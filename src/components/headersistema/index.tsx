@@ -2,7 +2,7 @@ import React from 'react';
 import './styles.css';
 
 interface Headersistema {
-    foto: string;
+    foto: React.ReactNode;
     quadrante1: React.ReactNode;
     quadrante2: React.ReactNode;
     quadrante3: React.ReactNode;
@@ -13,7 +13,7 @@ function Headersistema (props: Headersistema) {
     return (
         <header className="page-headersistema">
             <div className="fotoheader">
-                <img src={props.foto} alt="Ecoswim"/>
+                {props.foto}
             </div>
             <div className="header-content">
                 <div className="linha1">

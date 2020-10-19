@@ -4,7 +4,6 @@ import './styles.css';
 import Sistema from '../../components/Sistema';
 import InputsLogin from '../../components/Inputs/InputsLogin';
 import api from '../../services/api';
-import { DadosSession } from '../../routes';
 
 export interface usuario {
     id: number,
@@ -15,8 +14,7 @@ export interface usuario {
     admin: boolean,
 }
 
-function Login(props: DadosSession) {
-    const {setDadosSession} = props;
+function Login() {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [lembrarme, setLembrarme] = useState(false);
@@ -42,7 +40,7 @@ function Login(props: DadosSession) {
                     setErro(error.response.data.error);
                 }
             }
-        });        
+        });
     }
 
     async function criarToken (usuario: usuario) {
@@ -89,15 +87,14 @@ function Login(props: DadosSession) {
 
     function criarDadosSession (usuario: usuario) {
         sessionStorage.setItem('loginSessionData', JSON.stringify(usuario));
-        setDadosSession(usuario);
         if (usuario.admin) {
-            setRedirect('/admin/');
+            setRedirect('/admin');
         }else if (usuario.chefe) {
-            setRedirect('/minhaequipe/');
+            setRedirect('/paginainscricao');
         }else if (usuario.equipe == null) {
-            setRedirect('/semequipe/');
+            setRedirect('/semequipe');
         }else {
-            setRedirect('/minhainscricao/');
+            setRedirect('/paginainscricao');
         }
     }
 
@@ -106,6 +103,10 @@ function Login(props: DadosSession) {
             setLogado(true);          
         }
     }, [redirect]);
+
+    useEffect(() => {
+        sessionStorage.clear();
+    }, []);
 
     return(
         <Sistema

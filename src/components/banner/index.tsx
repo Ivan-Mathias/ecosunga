@@ -11,7 +11,7 @@ function Banner () {
             <div className="informacoes">
                 <h6>Inscreva-se já no</h6>
                 <h2>Ecoswim {edicao}</h2>
-                <Button className='botaoinscricoes' variant="contained" color="primary" size="large" href="/login/">Inscrições</Button>
+                <Button className='botaoinscricoes' variant="contained" color="primary" size="large" href="//login">Inscrições</Button>
             </div>
             <img src={fundo} alt="inscrições"/>
         </div>

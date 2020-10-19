@@ -41,7 +41,7 @@ function EsqueciaSenha() {
             titulo: "Senha alterada!",
             subTitulo: "Sua senha foi alterada com sucesso, agora é só aproveitar os estudos.",
             textoBotao: "Entrar",
-            link: "/minhainscricao",
+            link: "/paginainscricao",
         });
 
         setTokenCorreto(true);

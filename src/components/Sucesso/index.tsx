@@ -18,14 +18,16 @@ const Sucesso: React.FC<dados> = (props) => {
         <div id="page-sucesso">
             <div id="page-sucesso-content" className="container">
                 <div className="fundo">
-                    <div className="mensagem">
-                        {props.erro ? <img src={errorIcon} alt="Sucesso"/> : <img src={checkIcon} alt="Sucesso"/>}                        
-                        <strong>{props.titulo}</strong>
-                        <p className="subTitulo">{props.subTitulo.split('.')[0]}.<br/>{props.subTitulo.split('.')[1]}</p>
+                    <div className="conteudosucesso">
+                        <div className="mensagem">
+                            {props.erro ? <img src={errorIcon} alt="Sucesso"/> : <img src={checkIcon} alt="Sucesso"/>}                        
+                            <strong>{props.titulo}</strong>
+                            <p className="subTitulo">{props.subTitulo.split('.')[0]}.<br/>{props.subTitulo.split('.')[1]}</p>
+                        </div>
+                        <Link className="button" to={props.link}>
+                            {props.textoBotao}
+                        </Link>
                     </div>
-                    <Link className="button" to={props.link}>
-                        {props.textoBotao}
-                    </Link>
                 </div>
             </div>
         </div>

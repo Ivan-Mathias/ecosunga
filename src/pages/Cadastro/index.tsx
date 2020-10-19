@@ -4,11 +4,8 @@ import Sistema from '../../components/Sistema';
 import InputsCadastro from '../../components/Inputs/InputsCadastro';
 import Sucesso from '../../components/Sucesso';
 import api from '../../services/api';
-import { DadosSession } from '../../routes';
-import { usuario } from '../Login';
 
-function Cadastro(props: DadosSession) {
-    const {setDadosSession} = props;
+function Cadastro() {
     const [cadastroConcluido, setCadastroConcluido] = useState(false);
 
     const [erro, setErro] = useState('');
@@ -25,14 +22,17 @@ function Cadastro(props: DadosSession) {
                 email,
                 senha,
             }).then((response) => {
-                const usuario: usuario = {id: response.data.id, nome: nome, email: email, equipe: null, chefe: false, admin: false};
+                const usuario = {id: response.data.id, nome: nome, email: email, equipe: null, chefe: false, admin: false};
                 sessionStorage.setItem('loginSessionData', JSON.stringify(usuario));
-                setDadosSession(usuario);
                 setErro('');
                 setCadastroConcluido(true);
             });
         }        
     }
+
+    useEffect(() => {
+        sessionStorage.clear();
+    }, []);
 
     useEffect(() => {
         if (senha !== repetirSenha && repetirSenha !== "") {

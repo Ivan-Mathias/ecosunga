@@ -22,7 +22,7 @@ const CheckToken: React.FC<checkToken> = ({setEmail, setTokenVerificado, setErro
     };
 
     async function checkToken() {
-        await api.get('esqueciasenha/', {
+        await api.get('esqueciasenha', {
             headers: {
                 Authorization: `Bearer ${token}`,
             }

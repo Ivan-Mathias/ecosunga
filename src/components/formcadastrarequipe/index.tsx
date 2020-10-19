@@ -5,10 +5,9 @@ import './styles.css';
 import semfoto from '../../assets/images/fotopadrao.svg';
 import iconeAviso from '../../assets/images/icones/warning.svg';
 import camera from '../../assets/images/icones/camera.svg';
-import { Avatar, FormControl, InputLabel, makeStyles, MenuItem, Select } from '@material-ui/core';
+import { FormControl, InputLabel, makeStyles, Select } from '@material-ui/core';
 import { Tema } from '../../assets/styles/tema';
 import api from '../../services/api';
-import Sucesso from '../Sucesso';
 
 interface Formcadastrarequipe {
     setEquipeDefinida: (p: boolean) => void;
@@ -72,21 +71,21 @@ function Formcadastrarequipe (props: Formcadastrarequipe) {
             
 
             try {
-                await api.post('sistemaequipe/', dados).then(() => {
+                await api.post('sistemaequipe/', dados).then((resultado) => {
                     props.setSucesso({
                         titulo: "Equipe criada!",
                         subtitulo: "Boa, agora é só enviar a senha da sua equipe para os participantes. Você também podera gerir a sua equipe na proxima página.",
                         textoBotao: "Entrar",
-                        link: "/paginaequipe/",
+                        link: "/paginainscricao",
                     });
-                    const dadosSessionAtualizado = {...dadosSessionArquivo, equipe: nomeEquipe, chefe: true};
+                    const foto = 'https://ecoswim.com.br/api/avatares%20das%20equipes/' + resultado.data.id + '.jpg';
+                    const dadosSessionAtualizado = {...dadosSessionArquivo, equipe: resultado.data.id, chefe: true};
                     sessionStorage.setItem('loginSessionData', JSON.stringify(dadosSessionAtualizado));
-                    props.setEquipeDefinida(true);
                     props.setEquipeDefinida(true);
                 });
             } catch (error) {
                 alert('Erro ao mandar os dados!');
-            }            
+            }
         }else {
             alert('Preencha todos os dados!');
         }
@@ -152,12 +151,12 @@ function Formcadastrarequipe (props: Formcadastrarequipe) {
                                 }}
                                 >
                                 <option value="">Selecione</option>
-                                <option value="acedemia">Academia</option>
-                                <option value="amigos">Amigos</option>
-                                <option value="atletica">Atlética</option>
-                                <option value="clube">Clube</option>
-                                <option value="familia">Familia</option>
-                                <option value="outro">Outro</option>
+                                <option value="Academia">Academia</option>
+                                <option value="Amigos">Amigos</option>
+                                <option value="Atlética">Atlética</option>
+                                <option value="Clube">Clube</option>
+                                <option value="Família">Família</option>
+                                <option value="Outro">Outro</option>
                                 </Select>
                             </FormControl>
                         </div>

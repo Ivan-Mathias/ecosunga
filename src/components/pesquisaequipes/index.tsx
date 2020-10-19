@@ -3,8 +3,7 @@ import InputTexto from '../Inputs/InputTexto';
 import './styles.css';
 
 import iconePesquisa from '../../assets/images/icones/search.svg';
-import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@material-ui/core';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { Accordion, AccordionDetails, AccordionSummary } from '@material-ui/core';
 import api from '../../services/api';
 
 interface equipeitem {
@@ -25,7 +24,6 @@ interface Pesquisaequipe {
 
 function Pesquisaequipes (props: Pesquisaequipe) {
     const [nomeDaEquipe, setNomeDaEquipe] = useState('');
-    const [nomeDaEquipeEscolhida, setNomeDaEquipeEscolhida] = useState('');
     const [equipes, setEquipes] = useState([]);
     const [senhaDaEquipe, setSenhaDaEquipe] = useState('');
 
@@ -36,8 +34,6 @@ function Pesquisaequipes (props: Pesquisaequipe) {
             }
         }).then((resposta) => {
             setEquipes(resposta.data);
-            console.log(resposta.data);
-            
         }).catch((error) => {
             console.log(error);
         });
@@ -52,13 +48,11 @@ function Pesquisaequipes (props: Pesquisaequipe) {
     const handleChange = (panel: string) => (event: React.ChangeEvent<{}>, isExpanded: boolean) => {
         setExpanded(isExpanded ? panel : false);
         setSenhaDaEquipe('');
-        setNomeDaEquipeEscolhida('');
     };
 
     async function handleEntrarEquipe (idEquipe: number, nomeEquipe: string) {
         const dadosSessionArquivo = JSON.parse(sessionStorage.getItem('loginSessionData') as string);
         const idusuario = dadosSessionArquivo.id;
-        console.log(dadosSessionArquivo);
         
         await api.get('sistemaequipe/', {
             params: {
@@ -71,7 +65,7 @@ function Pesquisaequipes (props: Pesquisaequipe) {
                 titulo: "Equipe confirmada!",
                 subtitulo: "Agora você faz parte da equipe "+ nomeEquipe +". Acesse a pagina de usuário para finalizar a inscrição.",
                 textoBotao: "Entrar",
-                link: "/paginaequipe/",
+                link: "/paginainscricao",
             });
             const dadosSessionAtualizado = {...dadosSessionArquivo, equipe: idEquipe};
             sessionStorage.setItem('loginSessionData', JSON.stringify(dadosSessionAtualizado));
@@ -92,33 +86,39 @@ function Pesquisaequipes (props: Pesquisaequipe) {
                     </button>
                 </div>
                 <div className="acordeons">
-                    {equipes.map((equipe: equipeitem) => {
-                        return (
-                            <Accordion key={equipe.id} expanded={expanded === equipe.nome} onChange={handleChange(equipe.nome)}>
-                                <AccordionSummary>
-                                    <div className="sumario">
-                                        <div className="bloco1">
-                                            <img src={equipe.foto} alt={equipe.nome}/>
-                                            <div className="dados1">
-                                                <strong>{equipe.nome}</strong>
-                                                <p>{equipe.tipo}</p>
+                    {equipes.length === 0 ? (
+                        <div className="semresultados">
+                            <p>Nenhuma equipe encontrada com a sua pesquisa.</p>
+                        </div>
+                    ) : (
+                        equipes.map((equipe: equipeitem) => {
+                            return (
+                                <Accordion key={equipe.id} expanded={expanded === equipe.nome} onChange={handleChange(equipe.nome)}>
+                                    <AccordionSummary>
+                                        <div className="sumario">
+                                            <div className="bloco1">
+                                                <img src={equipe.foto} alt={equipe.nome}/>
+                                                <div className="dados1">
+                                                    <strong>{equipe.nome}</strong>
+                                                    <p>{equipe.tipo}</p>
+                                                </div>
+                                            </div>
+                                            <div className="dados2">
+                                                <p>{equipe.membros} pessoas</p>
+                                                <p>{equipe.horario}17h</p>
                                             </div>
                                         </div>
-                                        <div className="dados2">
-                                            <p>{equipe.membros} pessoas</p>
-                                            <p>{equipe.horario}17h</p>
+                                    </AccordionSummary>
+                                    <AccordionDetails>
+                                        <div className="detalhes">
+                                            <input type="text" value={senhaDaEquipe} onChange={(e) => {setSenhaDaEquipe(e.target.value)}} placeholder="Digite a senha da equipe"/>
+                                            <button onClick={() => {handleEntrarEquipe(equipe.id, equipe.nome)}} >Entrar na equipe</button>
                                         </div>
-                                    </div>
-                                </AccordionSummary>
-                                <AccordionDetails>
-                                    <div className="detalhes">
-                                        <input type="text" value={senhaDaEquipe} onChange={(e) => {setSenhaDaEquipe(e.target.value)}} placeholder="Digite a senha da equipe"/>
-                                        <button onClick={() => {handleEntrarEquipe(equipe.id, equipe.nome); setNomeDaEquipeEscolhida(equipe.nome);}} >Entrar na equipe</button>
-                                    </div>
-                                </AccordionDetails>
-                            </Accordion>
-                        );
-                    })}
+                                    </AccordionDetails>
+                                </Accordion>
+                            );
+                        })
+                    )}
                 </div>
             </main>
         </div>

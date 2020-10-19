@@ -34,7 +34,7 @@ interface Abasistema {
     labelTab1: string;
     labelTab2: string;
     labelTab3?: string;
-    foto: string;
+    foto: React.ReactNode;
     quadrante1: React.ReactNode;
     quadrante2: React.ReactNode;
     quadrante3: React.ReactNode;
@@ -96,7 +96,7 @@ function Abasistema (props: Abasistema) {
                     </TabPanel>
             );
         }
-    }, []);
+    }, [props.quadrante1, props.quadrante1tab2, props.quadrante1tab3]);
 
     return (
         <ThemeProvider theme={Tema}>

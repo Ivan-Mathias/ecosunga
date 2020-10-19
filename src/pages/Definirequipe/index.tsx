@@ -1,24 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Abasistema from '../../components/abasistema';
 import './styles.css';
 
 import logo from '../../assets/images/logos/logo.svg';
-import interrogacao from '../../assets/images/icones/interrogacao.svg';
 import Formcadastrarequipe from '../../components/formcadastrarequipe';
 import Pesquisaequipes from '../../components/pesquisaequipes';
 import Sucesso from '../../components/Sucesso';
-import api from '../../services/api';
+// import api from '../../services/api';
+import ModalDuvidasInscricoes from '../../components/modalduvidasinscricoes';
+import { Redirect } from 'react-router-dom';
+
+const foto = (
+    <div className="fotoequipe">
+        <img src={logo} alt="Ecoswim"/>
+    </div>
+    
+);
 
 const criarequipetitulo = (
     <div className="criarequipetitulo">
         <strong>Vamos criar a sua equipe!</strong>
-    </div>
-);
-
-const comofuncionamasinscricoes = (
-    <div className="duvidainscricao">
-        <p>Como funcionam as inscrições</p>
-        <img src={interrogacao} alt="Dúvidas na inscrição"/>
     </div>
 );
 
@@ -34,32 +35,43 @@ const entarequipetitulo = (
     </div>
 );
 
-const numeroequipesinscritas = (numeroequipes: number) => (
-    <div className="numeroequipesinscritas">
-        <p>Já temos {numeroequipes} equipes inscritas esse ano!</p>
-    </div>
-);
+// const numeroequipesinscritas = (numeroequipes: number) => (
+//     <div className="numeroequipesinscritas">
+//         <p>Já temos {numeroequipes} equipes inscritas esse ano!</p>
+//     </div>
+// );
 
 function DefinirEquipe () {
+    const [semDados, setSemDados] = useState(false);
+    const [temEquipe, setTemEquipe] = useState(false);
     const [equipeDefinida, setEquipeDefinida] = useState(false);
-    const [numeroDeEquipes, setNumeroDeEquipes] = useState(0);
+    // const [numeroDeEquipes, setNumeroDeEquipes] = useState(0);
     const [sucesso, setSucesso] = useState<{ titulo: string, subtitulo: string, textoBotao: string, link: string }>({
         titulo: '', subtitulo: '', textoBotao: '', link: '',
     });
-    
-    async function getNumeroDeEquipes() {
-        await api.get('sistemaequipe/', {
-            params: {
-                numerodeequipes: true,
+
+    useEffect(() => {
+        const dadosSession = JSON.parse(sessionStorage.getItem('loginSessionData') as string);
+        if (dadosSession && dadosSession.id) {
+            if (dadosSession.equipe !== null) {
+                setTemEquipe(true);
             }
-        }).then((resposta) => {
-            setNumeroDeEquipes(resposta.data);
-            console.log(resposta.data);
-            
-        }).catch((error) => {
-            console.log(error);
-        });
-    }
+        } else {
+            setSemDados(true);
+        }
+    }, []);
+    
+    // async function getNumeroDeEquipes() {
+    //     await api.get('sistemaequipe/', {
+    //         params: {
+    //             numerodeequipes: true,
+    //         }
+    //     }).then((resposta) => {
+    //         setNumeroDeEquipes(resposta.data);
+    //     }).catch((error) => {
+    //         console.log(error);
+    //     });
+    // }
 
     return (equipeDefinida
         ?
@@ -72,20 +84,29 @@ function DefinirEquipe () {
         :
             (<div className="page-definirequipe">
                 <Abasistema 
-                    labelTab1="Criar uma equipe"
-                    labelTab2="Entrar em uma equipe"
-                    foto={logo}
-                    quadrante1={criarequipetitulo}
-                    quadrante2={comofuncionamasinscricoes}
-                    quadrante3={criarequipesubtitulo}
+                    labelTab1="Entrar em uma equipe"
+                    labelTab2="Criar uma equipe"
+                    foto={foto}
+                    quadrante1={entarequipetitulo}
+                    quadrante2={<ModalDuvidasInscricoes />}
+                    quadrante3=""
                     quadrante4=""
-                    conteudo={<Formcadastrarequipe setEquipeDefinida={setEquipeDefinida} setSucesso={setSucesso}/>}
-                    quadrante1tab2={entarequipetitulo}
-                    quadrante2tab2={numeroequipesinscritas(32)}
-                    quadrante3tab2=""
+                    // quadrante4={numeroequipesinscritas(32)}
+                    conteudo={<Pesquisaequipes 
+                                    setEquipeDefinida={setEquipeDefinida} 
+                                    setSucesso={setSucesso}
+                                />}
+                    quadrante1tab2={criarequipetitulo}
+                    quadrante2tab2={<ModalDuvidasInscricoes />}
+                    quadrante3tab2={criarequipesubtitulo}
                     quadrante4tab2=""
-                    conteudotab2={<Pesquisaequipes setEquipeDefinida={setEquipeDefinida} setSucesso={setSucesso}/>}
+                    conteudotab2={<Formcadastrarequipe 
+                                setEquipeDefinida={setEquipeDefinida} 
+                                setSucesso={setSucesso}
+                            />}
                 />
+                {temEquipe && <Redirect to="/paginainscricao" />}
+                {semDados && <Redirect to="/login" />}
             </div>)
         
     );

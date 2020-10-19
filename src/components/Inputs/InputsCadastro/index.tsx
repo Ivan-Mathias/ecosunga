@@ -25,6 +25,7 @@ const InputsCadastro: React.FC<camposCadastro> = (props) => {
             focusRepetirSenha.current.focus();
         }
     }
+    
     return (
         <div className="inputsLogin">
             <div className="inputsCadastro">

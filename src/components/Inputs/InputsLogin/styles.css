@@ -24,9 +24,9 @@
 }
 
 .entrelinhas label p {
-    position: absolute;
     margin-left: 3.4rem;
     margin-top: 0.2rem;
+    width: 10rem;
 }
 
 .lembrarCheckbox {

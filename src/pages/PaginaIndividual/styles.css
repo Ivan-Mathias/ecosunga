@@ -1,0 +1,199 @@
+.page-paginaindividual {
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.page-paginaindividual > img {
+    position: absolute;
+    top: 0rem;
+    left: 9rem;
+    height: 6.4rem;
+    padding: 0.8rem 0;
+}
+
+.page-paginaindividual .logout {
+    position: absolute;
+    top: 12rem;
+    right: 8rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.page-paginaindividual .logout button {
+    margin-top: 1rem;
+}
+
+.page-paginaindividual .logout .MuiIconButton-root:hover {
+    background-color: unset;
+}
+
+.page-paginaindividual .fotoequipe {
+    width: 16rem;
+    height: 16rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: 4rem;
+}
+
+.page-paginaindividual .tituloequipe strong {
+    font: 700 6.2rem Archivo;
+    color: var(--cor-fundo-principal);
+}
+
+.page-paginaindividual .tituloequipe p {
+    font: 400 1.6rem Poppins;
+    color: var(--cor-texto-campos);
+}
+
+.page-paginaindividual .informacoesequipe {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-top: 2rem;
+}
+
+.page-paginaindividual .informacoesequipe .senhaequipe {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 8rem;
+    width: 20rem;
+}
+
+.page-paginaindividual .informacoesequipe p{
+    font: 400 1.6rem Poppins;
+    color: var(--cor-texto-campos);
+}
+
+.page-paginaindividual .informacoesequipe h3 {
+    font: 400 3.6rem Poppins;
+    color: var(--cor-fundo-principal);
+}
+
+.page-paginaindividual .minhaequipe,
+.page-paginaindividual .minhainscricao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-paginaindividual .listademembros {
+    width: 90%;
+    max-width: 740px;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    align-items: center;
+    margin: 2.4rem 0;
+}
+
+.page-paginaindividual .listademembros .cabecalho{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font: 400 1.6rem Poppins;
+    color: var(--cor-texto-claro);
+    width: 100%;
+    padding: 0 3.2rem;
+}
+
+.page-paginaindividual .listademembros .itempessoa {
+    width: 100%;
+    height: 7.6rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3.2rem;
+    border-radius: 8px;
+    border: 1px solid var(--cor-borda-campos);
+    background:var(--cor-interior-campos);
+    margin-top: 0.8rem;
+    transition: 0.2s;
+}
+
+.page-paginaindividual .listademembros .itempessoa:hover {
+    border: 1px solid var(--cor-borda-campos-hover);
+    background:var(--cor-interior-campos-hover);
+}
+
+.page-paginaindividual .listademembros .itempessoa h3 {
+    font: 400 2.4rem Archivo;
+    color: var(--cor-texto-escuro);
+}
+
+.paginainscricao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media(max-width: 700px) {
+    .page-paginaindividual > img {
+        display: none;
+    }
+
+    .page-paginaindividual .logout {
+        top: 6rem;
+        right: 4rem;
+    }
+
+    .page-paginaindividual .fotoheader {
+        right: unset;
+        top: 8rem;
+        left: 2.4rem;
+        width: 8rem;
+        height: 8rem;
+    }
+    
+    .page-paginaindividual .fotoequipe {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-left: 0;
+    }
+    
+    .page-paginaindividual .fotoequipe img {
+        margin-top: 0;
+        width: 100%;
+        height: 100%;
+        max-height: unset;
+    }
+    
+    .page-paginaindividual .tituloequipe {
+        margin-top: 8.4rem;
+    }
+    
+    .page-paginaindividual .tituloequipe strong {
+        font: 700 2.8rem Archivo;
+        color: var(--cor-fundo-principal);
+    }
+    
+    .page-paginaindividual .tituloequipe p {
+        font-size: 1.2;
+        color: var(--cor-fundo-principal);
+    }
+
+    .page-paginaindividual .informacoesequipe {
+        margin-top: 0rem;
+        margin-left: 0rem;
+        margin-bottom: -2rem;
+    }
+
+    .page-paginaindividual .informacoesequipe .senhaequipe {
+        margin-right: 4rem;
+    }
+
+    .page-paginaindividual .informacoesequipe p{
+        font: 400 1.2rem Poppins;
+        color: var(--cor-texto-campos);
+    }
+    
+    .page-paginaindividual .informacoesequipe h3 {
+        font: 400 2.4rem Poppins;
+        color: var(--cor-fundo-principal);
+    }
+}

@@ -1,0 +1,37 @@
+.duvidainscricao button {
+    background: transparent;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    transform: none;
+}
+
+.janelamodalduvidasinscricao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#titulo-modal-duvida-inscricao {
+    font: 700 2.4rem Archivo;
+    color: var(--cor-texto-escuro);
+}
+
+#descricao-modal-duvida-inscricao {
+    margin-top: 2.4rem;
+    font: 400 1.6 Poppins;
+    color: var(--cor-texto-escuro);
+    text-align: justify;
+}
+
+@media(max-width: 700px) {
+    #titulo-modal-duvida-inscricao {
+        font-size: 2.4rem;
+    }
+    
+    #descricao-modal-duvida-inscricao {
+        font-size: 1.4rem;
+    }
+} 
