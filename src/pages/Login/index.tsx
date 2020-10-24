@@ -47,7 +47,7 @@ function Login() {
         const {id, nome, email, equipe, chefe, admin} = usuario;
         await api.get('jwt/', {
             params: {id, nome, email, equipe: equipe == null ? "" : equipe, chefe, admin}
-        }).then((resposta) => {            
+        }).then((resposta) => {
             localStorage.setItem('loginToken', resposta.data);
         }).catch((error) => console.log(error));
     }
@@ -74,7 +74,16 @@ function Login() {
     useEffect(() => {
         const token = localStorage.getItem('loginToken');
         if (token) {
-            conferirToken(token);
+            const loginAutomatico = sessionStorage.getItem('loginautomatico');
+            if (loginAutomatico === 'impedir') {
+                const dadosToken = JSON.parse(atob(token.split(".")[1]));
+                sessionStorage.clear();
+                localStorage.clear();
+                setEmail(dadosToken.email);
+                setLembrarme(true);
+            }else{
+                conferirToken(token);
+            }
         }else if(usuario){
             if (lembrarme) {
                 criarToken(usuario);
@@ -87,11 +96,9 @@ function Login() {
 
     function criarDadosSession (usuario: usuario) {
         sessionStorage.setItem('loginSessionData', JSON.stringify(usuario));
-        if (usuario.admin) {
+        if (usuario.admin === true) {
             setRedirect('/admin');
-        }else if (usuario.chefe) {
-            setRedirect('/paginainscricao');
-        }else if (usuario.equipe == null) {
+        }else if (usuario.equipe === null) {
             setRedirect('/semequipe');
         }else {
             setRedirect('/paginainscricao');
@@ -128,8 +135,10 @@ function Login() {
             
         >
             <InputsLogin
+                email={email}
                 setEmail={setEmail}
                 setSenha={setSenha}
+                lembrarme={lembrarme}
                 setLembrarme={setLembrarme}
             />
             {logado && <Redirect to={redirect} />}

@@ -9,6 +9,7 @@ import api from '../../services/api';
 import AtualizarDadosUsuario from '../../components/atualizardadosusuario';
 import { Redirect } from 'react-router-dom';
 import AtualizarDadosEquipe from '../../components/atualizardadosequipe';
+import ModalDuvidasInscricoes from '../../components/modalduvidasinscricoes';
 
 export interface DadosEquipe {
     id: number;
@@ -32,10 +33,13 @@ const informacoesequipe = (senha: string, horario: number) => (
             <p>Senha da equipe:</p>
             <h3>{senha}</h3>
         </div>
-        <div className="horarioequipe">
-            <p>Horário:</p>
-            <h3>17h</h3>
-        </div>      
+        {horario && 
+            <div className="horarioequipe">
+                <p>Horário:</p>
+                <h3>{horario}</h3>
+            </div>  
+        }
+            
 </div>
 );
 
@@ -68,6 +72,12 @@ function PaginaIndividual () {
             </div>
         );
     };
+    
+    const botaoDoar = (
+        <div className="botaodoar">
+            <button type="button" onClick={(event) => {event.preventDefault(); window.open("https://ipe.colabore.org/Ecoswim/single_step")}}>Doar</button>
+        </div>
+    );
 
     function listarMembros () {
         setListaPessoas(
@@ -163,6 +173,7 @@ function PaginaIndividual () {
 
     function handleLogout () {
         sessionStorage.clear();
+        sessionStorage.setItem('loginautomatico', "impedir");
         setFezLogout(true);
     }
 
@@ -173,9 +184,9 @@ function PaginaIndividual () {
                 labelTab2={labelTab2}
                 foto={divFoto}
                 quadrante1={tituloequipe(dadosEquipe.nome, dadosEquipe.tipo)}
-                quadrante2=""
+                quadrante2={<ModalDuvidasInscricoes texto={1}/>}
                 quadrante3={informacoesequipe(dadosEquipe.senha, dadosEquipe.horario)}
-                quadrante4=""
+                quadrante4={botaoDoar}
                 conteudo={listaPessoas}
                 conteudotab2={atualizarCadastro}
             />

@@ -63,7 +63,7 @@ function Pesquisaequipes (props: Pesquisaequipe) {
         }).then(() => {
             props.setSucesso({
                 titulo: "Equipe confirmada!",
-                subtitulo: "Agora você faz parte da equipe "+ nomeEquipe +". Acesse a pagina de usuário para finalizar a inscrição.",
+                subtitulo: "Agora você faz parte da equipe "+ nomeEquipe +". Lembre-se de fazer a doação para confirmar a sua inscrição.",
                 textoBotao: "Entrar",
                 link: "/paginainscricao",
             });
@@ -105,7 +105,7 @@ function Pesquisaequipes (props: Pesquisaequipe) {
                                             </div>
                                             <div className="dados2">
                                                 <p>{equipe.membros} pessoas</p>
-                                                <p>{equipe.horario}17h</p>
+                                                <p>{equipe.horario}</p>
                                             </div>
                                         </div>
                                     </AccordionSummary>

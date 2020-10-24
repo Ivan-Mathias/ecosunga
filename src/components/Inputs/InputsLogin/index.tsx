@@ -1,10 +1,13 @@
+import { Email } from '@material-ui/icons';
 import React, { useState, useRef } from 'react';
 import { Link } from "react-router-dom";
 import './styles.css';
 
 interface camposLogin {
+    email: string;
     setEmail: (p: string) => void;
     setSenha: (p: string) => void;
+    lembrarme: boolean;
     setLembrarme: (p: boolean) => void;
 }
 
@@ -23,7 +26,7 @@ const InputsLogin: React.FC<camposLogin> = (props) => {
         <div className="inputsLogin">
             <div className="inputs">
                 <div className="textInput">
-                    <input type="email" name="email" placeholder="E-mail"
+                    <input type="email" name="email" placeholder="E-mail" value={props.email}
                         onChange={(e) => {props.setEmail(e.target.value)}}/>
                 </div>
                 <div className="textInput">
@@ -34,7 +37,7 @@ const InputsLogin: React.FC<camposLogin> = (props) => {
                 </div>
             </div>
             <div className="entrelinhas">
-                <input type="checkbox" className="lembrarCheckbox" id="checkboxLembrar"
+                <input type="checkbox" className="lembrarCheckbox" id="checkboxLembrar" checked={props.lembrarme}
                     onChange={(e) => {props.setLembrarme(e.target.checked);}}/>
                 <label htmlFor="checkboxLembrar">
                     <p>Lembrar-me</p>

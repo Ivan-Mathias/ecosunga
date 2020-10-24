@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Redirect, Route } from "react-router-dom";
 import Cadastro from './pages/Cadastro';
 import DefinirEquipe from './pages/Definirequipe';
 import EsqueciaSenha from './pages/EsqueciaSenha';
@@ -13,6 +13,7 @@ import Semequipe from './pages/Semequipe';
 function Routes(){
     return(
         <BrowserRouter basename="/inscricoes">
+            <Route path="/" exact><Redirect to="/login" /></Route>
             {/* <Route path="/" exact component={Home} />
             <Route path="/sobre" component={Sobre} />
             <Route path="/resultados" component={Resultados} /> */}

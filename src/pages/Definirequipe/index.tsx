@@ -88,7 +88,7 @@ function DefinirEquipe () {
                     labelTab2="Criar uma equipe"
                     foto={foto}
                     quadrante1={entarequipetitulo}
-                    quadrante2={<ModalDuvidasInscricoes />}
+                    quadrante2={<ModalDuvidasInscricoes texto={0}/>}
                     quadrante3=""
                     quadrante4=""
                     // quadrante4={numeroequipesinscritas(32)}
@@ -97,7 +97,7 @@ function DefinirEquipe () {
                                     setSucesso={setSucesso}
                                 />}
                     quadrante1tab2={criarequipetitulo}
-                    quadrante2tab2={<ModalDuvidasInscricoes />}
+                    quadrante2tab2={<ModalDuvidasInscricoes texto={0}/>}
                     quadrante3tab2={criarequipesubtitulo}
                     quadrante4tab2=""
                     conteudotab2={<Formcadastrarequipe 
