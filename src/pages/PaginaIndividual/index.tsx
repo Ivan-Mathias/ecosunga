@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import Abasistema from '../../components/abasistema';
 import './styles.css';
-
-import logoEcoswim from '../../assets/images/logos/logo.svg';
-import botaoLogout from '../../assets/images/icones/logout.svg';
-import { IconButton } from '@material-ui/core';
 import api from '../../services/api';
 import AtualizarDadosUsuario from '../../components/atualizardadosusuario';
 import { Redirect } from 'react-router-dom';
 import AtualizarDadosEquipe from '../../components/atualizardadosequipe';
 import ModalDuvidasInscricoes from '../../components/modalduvidasinscricoes';
+
+import logoEcoswim from '../../assets/images/logos/logo.svg';
+import botaoLogout from '../../assets/images/icones/logout.svg';
+import { IconButton } from '@material-ui/core';
+import iconeInscricaoConfirmada from '../../assets/images/icones/inscricao-confirmada.svg';
+import iconeInscricaoPendente from '../../assets/images/icones/inscricao-pendente.svg';
 
 export interface DadosEquipe {
     id: number;
@@ -43,9 +45,14 @@ const informacoesequipe = (senha: string, horario: number) => (
 </div>
 );
 
-const itemPessoa = (nome: string) => (
+const itemPessoa = (nome: string, inscricao: boolean) => (
     <div className="itempessoa">
         <h3>{nome}</h3>
+        {inscricao ? (
+            <img src={iconeInscricaoConfirmada} alt="Inscrição confirmada"/>
+            ) : (
+            <img src={iconeInscricaoPendente} alt="Inscrição pendente"/>
+        )}
     </div>
 );
 
@@ -57,7 +64,7 @@ function PaginaIndividual () {
     const [nomeUsuario, setNomeUsuario] = useState("");
     const [emailUsuario, setEmailUsuario] = useState("");
     const [dadosEquipe, setDadosEquipe] = useState<DadosEquipe>({id: 0, nome: "", senha: "", tipo: "", foto: "", horario: 0});
-    const [listaMembros, setListaMembros] = useState([{nome: ""}]);
+    const [listaMembros, setListaMembros] = useState([{nome: "", inscricao: false}]);
     const [listaPessoas, setListaPessoas] = useState<React.ReactNode>('');
     const [atualizarCadastro, setAtualizarCadastro] = useState<React.ReactNode>('');
     const [divFoto, setDivFoto] = useState<React.ReactNode>('');
@@ -88,7 +95,7 @@ function PaginaIndividual () {
                         <p>Inscrição</p>
                     </div>
                     {listaMembros.map((pessoa) => {  
-                        return itemPessoa(pessoa.nome);
+                        return itemPessoa(pessoa.nome, pessoa.inscricao);
                     })}
                 </div>
             </div>

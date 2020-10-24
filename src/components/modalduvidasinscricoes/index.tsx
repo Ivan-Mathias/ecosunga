@@ -69,7 +69,7 @@ function ModalDuvidasInscricoes (props: ModalDuvidasInscricoes) {
                             </h2>
                             <p id="descricao-modal-duvida-inscricao">
                                 Agora que você já escolheu a sua equipe, para confirmar a sua participação no evento, 
-                                você deve fazer a sua dooação para ONG IPÊ, de no mínimo R$20,00 clicando no botão de doação.  
+                                você deve fazer a sua doação para ONG IPÊ, de no mínimo R$20,00 clicando no botão de doação.  
                                 <br/><br/>
                                 Na página de doação, você poderá escolher entre realizar uma doação única ou se deseja contribuir 
                                 mensalmente com a ONG IPÊ. Você deve indicar a sua equipe no campo correspondente, além de preencher
