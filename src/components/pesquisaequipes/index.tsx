@@ -105,7 +105,7 @@ function Pesquisaequipes (props: Pesquisaequipe) {
                                             </div>
                                             <div className="dados2">
                                                 <p>{equipe.membros} pessoas</p>
-                                                <p>{equipe.horario}</p>
+                                                {equipe.horario && <p>{equipe.horario}</p>}
                                             </div>
                                         </div>
                                     </AccordionSummary>

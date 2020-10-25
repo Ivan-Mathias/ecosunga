@@ -33,7 +33,7 @@ function Login() {
             }
         }).then((resposta) => {
             const {data: {id, nome, email, equipe, chefe, admin}} = resposta;
-            setUsuario({id, nome, email, equipe, chefe, admin});
+            setUsuario({id, nome, email, equipe, chefe: Boolean(chefe), admin: Boolean(admin)});            
         }).catch(function (error) {
             if (error.response) {
                 if (error.response.status === 401 || error.response.status === 404) {
@@ -96,7 +96,7 @@ function Login() {
 
     function criarDadosSession (usuario: usuario) {
         sessionStorage.setItem('loginSessionData', JSON.stringify(usuario));
-        if (usuario.admin === true) {
+        if (usuario.admin) {
             setRedirect('/admin');
         }else if (usuario.equipe === null) {
             setRedirect('/semequipe');

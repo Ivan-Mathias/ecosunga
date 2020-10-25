@@ -171,7 +171,7 @@ function PaginaIndividual () {
             setListaMembros(resposta.data);
         }).catch((error) => {
             console.log(error);
-        });   
+        });
     }
 
     useEffect(() => {

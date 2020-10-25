@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {lazy, Suspense} from 'react';
 import { BrowserRouter, Redirect, Route } from "react-router-dom";
 import Cadastro from './pages/Cadastro';
 import DefinirEquipe from './pages/Definirequipe';
@@ -9,6 +9,8 @@ import PaginaIndividual from './pages/PaginaIndividual';
 // import Resultados from './pages/Resultados';
 import Semequipe from './pages/Semequipe';
 // import Sobre from './pages/Sobre';
+
+const Admin = lazy(() => import('./pages/Admin'));
 
 function Routes(){
     return(
@@ -23,6 +25,11 @@ function Routes(){
             <Route path="/semequipe" component={Semequipe} />
             <Route path="/definirequipe" component={DefinirEquipe} />
             <Route path="/paginainscricao" component={PaginaIndividual} />
+            <Route path="/admin">
+                <Suspense fallback={<div>Carregando...</div>}>
+                    <Admin />
+                </Suspense>
+            </Route>
         </BrowserRouter>
     )
 }

@@ -1,0 +1,37 @@
+.pesquisaequipes .listademembrosequipe .itempessoaadmin {
+    width: 90%;
+    height: 7.6rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3.2rem;
+    padding-right: 5.2rem;
+    border-radius: 8px;
+    border: 1px solid var(--cor-borda-campos);
+    background:var(--cor-interior-campos);
+    margin-top: 0.8rem;
+    transition: 0.2s;
+}
+
+.pesquisaequipes .listademembrosequipe .itempessoaadmin:hover {
+    border: 1px solid var(--cor-borda-campos-hover);
+    background:var(--cor-interior-campos-hover);
+}
+
+.pesquisaequipes .listademembrosequipe .itempessoaadmin button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+@media(max-width: 700px) {
+    .pesquisaequipes .listademembrosequipe .itempessoaadmin {
+        padding-right: 3.2rem;
+    }
+    
+    .pesquisaequipes .listademembrosequipe .itempessoaadmin h3 {
+        font-size: 1.6rem;
+    }
+}

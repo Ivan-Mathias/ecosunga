@@ -15,3 +15,5 @@ Esse site foi criado com react para substituir a plataforma de inscrições do e
 - 1.0.4 - Modal explicando doações adicionado.
 
 - 1.0.5 - Ícone de status da inscrição adicionado.
+
+- 1.1.0 - Site agora tem painel de Admin.

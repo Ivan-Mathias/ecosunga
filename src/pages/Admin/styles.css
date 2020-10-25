@@ -1,0 +1,52 @@
+.page-paginaadmin {
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.page-paginaadmin .titulo strong {
+    font: 700 4.2rem Archivo;
+    color: var(--cor-fundo-principal);
+}
+
+.page-paginaadmin .numerosinscricoes {
+    font: 400 2rem Poppins;
+    color: var(--cor-texto-campos);
+}
+
+.page-paginaadmin .logout {
+    position: absolute;
+    top: 12rem;
+    right: 8rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.page-paginaadmin .logout button {
+    margin-top: 1rem;
+}
+
+.page-paginaadmin .logout .MuiIconButton-root:hover {
+    background-color: unset;
+}
+
+@media(max-width: 700px) {
+    .page-paginaadmin .titulo strong {
+        font: 700 2.8rem Archivo;
+        color: var(--cor-fundo-principal);
+    }
+
+    .page-paginaadmin .numerosinscricoes {
+        margin-top: 2.4rem;
+        font-size: 1.2rem;
+    }
+    
+    .page-paginaadmin .logout {
+        top: 6rem;
+        right: 4rem;
+    }
+
+    .page-paginaadmin .fotoequipe {
+        display: none;
+    }
+}

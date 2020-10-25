@@ -30,24 +30,24 @@ const InputsCadastro: React.FC<camposCadastro> = (props) => {
         <div className="inputsLogin">
             <div className="inputsCadastro">
                 <div className="textInput">
-                    <input type="text" name="nome" placeholder="Nome"
+                    <input autoComplete="off" type="text" name="nome" placeholder="Nome"
                         onChange={(e) => {props.setNome(e.target.value)}}/>
                 </div>
                 <div className="textInput">
-                    <input type="email" name="email" placeholder="E-mail"
+                    <input autoComplete="off" type="email" name="email" placeholder="E-mail"
                         onChange={(e) => {props.setEmail(e.target.value)}}/>
                 </div>
                 <div className="textInput">
-                    <input type={visibilidadeSenha ? "text" : "password"} name="senha" placeholder="Senha" ref={focusSenha}
+                    <input autoComplete="off" type={visibilidadeSenha ? "text" : "password"} name="senha" placeholder="Senha" ref={focusSenha}
                         onChange={(e) => {props.setSenha(e.target.value)}}/>
                     <input type="checkbox" className="inputCheckbox" id="checkboxSenha" checked={visibilidadeSenha}/>
-                    <label htmlFor="checkboxSenha" onClick={toggleSenha}></label>
+                    <label style={{cursor: "pointer"}} htmlFor="checkboxSenha" onClick={toggleSenha}></label>
                 </div>
                 <div className="textInput">
-                    <input type={visibilidadeSenha ? "text" : "password"} name="senha" placeholder="Repita a senha" ref={focusRepetirSenha}
+                    <input autoComplete="off" type={visibilidadeSenha ? "text" : "password"} name="senha" placeholder="Repita a senha" ref={focusRepetirSenha}
                         onChange={(e) => {props.setRepetirSenha(e.target.value)}}/>
                     <input type="checkbox" className="inputCheckbox" id="checkboxRepetirSenha" checked={visibilidadeSenha}/>
-                    <label htmlFor="checkboxRepetirSenha" onClick={toggleRepetirSenha}></label>
+                    <label style={{cursor: "pointer"}} htmlFor="checkboxRepetirSenha" onClick={toggleRepetirSenha}></label>
                 </div>
             </div>
         </div>

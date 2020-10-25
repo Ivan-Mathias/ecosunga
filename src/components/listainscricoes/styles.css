@@ -1,0 +1,28 @@
+.pesquisaequipes .listademembrosequipe {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    align-items: center;
+    justify-content: space-around;
+    border-top: 1px solid var(--cor-borda-campos);
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+}
+
+.pesquisaequipes .listademembrosequipe .cabecalho{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font: 400 1.6rem Poppins;
+    color: var(--cor-texto-claro);
+    width: 90%;
+    padding: 0 3.2rem;
+}
+
+@media(max-width: 700px) {
+    .pesquisaequipes .listademembrosequipe .cabecalho{
+        padding-right: 1.2rem;
+    }
+}
