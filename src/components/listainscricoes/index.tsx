@@ -86,6 +86,7 @@ function ListaInscricoes () {
                                             {listaMembros.map((pessoa) => {  
                                                 return (
                                                 <ItemPessoaAdmin
+                                                    key={pessoa.id}
                                                     id={pessoa.id}
                                                     nome={pessoa.nome}
                                                     inscricaoOriginal={pessoa.inscricao}
